@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "FocalCulator",
       theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
+        primarySwatch: Colors.blueGrey,
         textTheme: GoogleFonts.montserratTextTheme(),
       ),
       // theme: NeumorphicThemeData(

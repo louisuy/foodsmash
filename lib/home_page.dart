@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+// import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:touchable_opacity/touchable_opacity.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -52,9 +53,16 @@ class HomePageState extends State<HomePage> {
 
   void backspace() {
     setState(() {
-      n2 = "";
-      result = "";
-      eqn = n1;
+      if (n2 != "") {
+        n2 = "";
+        result = "";
+        eqn = n1;
+      } else {
+        n2 = "";
+        n1 = "";
+        result = "";
+        eqn = n1;
+      }
     });
   }
 
@@ -87,42 +95,96 @@ class HomePageState extends State<HomePage> {
   }
 
   Widget foodItemBuild(String buttonText, String imageURL) {
+    return TouchableOpacity(
+        activeOpacity: 0.4,
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 0),
+          padding: const EdgeInsets.all(5),
+          width: 100,
+          child: Column(
+            children: [
+              ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
+                  child: Image.asset(
+                    imageURL,
+                    // color: Color.fromRGBO(255, 255, 255, opacity),
+                    // colorBlendMode: BlendMode.modulate
+                  )),
+              Container(
+                padding: const EdgeInsets.all(10.0),
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          offset: Offset(0, 5),
+                          blurRadius: 20,
+                          color: Color(0x44000000))
+                    ]),
+                child: Row(
+                  children: [Text(buttonText)],
+                ),
+              )
+            ],
+          ),
+        ),
+        onTap: () {
+          append(buttonText);
+          // opacity = 0.5;
+        });
+    // double opacity = 1;
     /*return MaterialButton(
       height: 85,
       child: Text(buttonText),
       onPressed: () => append(buttonText),
       color: buttonColor,
     );*/
-    return Container(
-        margin: const EdgeInsets.only(bottom: 0),
-        padding: EdgeInsets.all(5),
-        width: 100,
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-              child: Image.asset(imageURL),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10.0),
-              decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10)),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                        offset: Offset(0, 5),
-                        blurRadius: 20,
-                        color: Color(0x44000000))
-                  ]),
-              child: Row(
-                children: [Text(buttonText)],
-              ),
-            )
-          ],
-        ));
+    /*return GestureDetector(
+      // splashColor: Colors.blue,
+      // borderRadius: BorderRadius.circular(10.0),
+      child: Container(
+          margin: const EdgeInsets.only(bottom: 0),
+          padding: const EdgeInsets.all(5),
+          width: 100,
+          child: Column(
+            children: [
+              ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
+                  child: Image.asset(
+                    imageURL,
+                    // color: Color.fromRGBO(255, 255, 255, opacity),
+                    // colorBlendMode: BlendMode.modulate
+                  )),
+              Container(
+                padding: const EdgeInsets.all(10.0),
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          offset: Offset(0, 5),
+                          blurRadius: 20,
+                          color: Color(0x44000000))
+                    ]),
+                child: Row(
+                  children: [Text(buttonText)],
+                ),
+              )
+            ],
+          )),
+      onTap: () {
+        append(buttonText);
+        // opacity = 0.5;
+      },
+    );*/
     /*return NeumorphicButton(
       margin: EdgeInsets.only(top: 12),
       onPressed: () => append(buttonText),
@@ -139,9 +201,14 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("FocalCulator")),
+      // appBar: AppBar(title: const Text("FocalCulator")),
       body: Container(
-          padding: const EdgeInsets.all(40.0),
+          padding: const EdgeInsets.only(
+            top: 100,
+            left: 40,
+            bottom: 100,
+            right: 40,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -173,19 +240,19 @@ class HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MaterialButton(
-                    child: const Text("Calculate"),
-                    onPressed: calculate,
-                    color: Colors.lightGreenAccent,
-                  ),
-                  MaterialButton(
                     child: const Text("Reset"),
                     onPressed: reset,
-                    color: Colors.lightGreenAccent,
+                    color: Colors.white,
+                  ),
+                  MaterialButton(
+                    child: const Text("Calculate"),
+                    onPressed: calculate,
+                    color: Colors.white,
                   ),
                   MaterialButton(
                     child: const Text("⌫"),
                     onPressed: backspace,
-                    color: Colors.lightGreenAccent,
+                    color: Colors.white,
                   )
                 ],
               ),
