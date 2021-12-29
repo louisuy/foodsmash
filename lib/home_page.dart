@@ -86,7 +86,7 @@ class HomePageState extends State<HomePage> {
     });
   }
 
-  Widget foodItemBuild(String buttonText, Color buttonColor) {
+  Widget foodItemBuild(String buttonText, String imageURL) {
     /*return MaterialButton(
       height: 85,
       child: Text(buttonText),
@@ -94,18 +94,19 @@ class HomePageState extends State<HomePage> {
       color: buttonColor,
     );*/
     return Container(
-        margin: EdgeInsets.only(bottom: 0),
+        margin: const EdgeInsets.only(bottom: 0),
+        padding: EdgeInsets.all(5),
         width: 100,
         child: Column(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-              child: Image.asset('assets/rice.jpeg'),
+              child: Image.asset(imageURL),
             ),
             Container(
-              padding: EdgeInsets.all(10.0),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(10.0),
+              decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(10),
                       bottomRight: Radius.circular(10)),
@@ -114,7 +115,7 @@ class HomePageState extends State<HomePage> {
                     BoxShadow(
                         offset: Offset(0, 5),
                         blurRadius: 20,
-                        color: Color(0x440000000))
+                        color: Color(0x44000000))
                   ]),
               child: Row(
                 children: [Text(buttonText)],
@@ -147,27 +148,27 @@ class HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  foodItemBuild("Egg", Colors.lightGreenAccent),
-                  foodItemBuild("Tuna", Colors.lightGreenAccent),
-                  foodItemBuild("Chicken", Colors.lightGreenAccent),
+                  foodItemBuild("Egg", 'assets/rice.jpeg'),
+                  foodItemBuild("Tuna", 'assets/rice.jpeg'),
+                  foodItemBuild("Chicken", 'assets/rice.jpeg'),
                 ],
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: [
-              //     foodItemBuild("Ramen", Colors.lightGreenAccent),
-              //     foodItemBuild("Lettuce", Colors.lightGreenAccent),
-              //     foodItemBuild("Cheese", Colors.lightGreenAccent),
-              //   ],
-              // ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: [
-              //     foodItemBuild("Bread", Colors.lightGreenAccent),
-              //     foodItemBuild("Spam", Colors.lightGreenAccent),
-              //     foodItemBuild("Rice", Colors.lightGreenAccent),
-              //   ],
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  foodItemBuild("Ramen", 'assets/rice.jpeg'),
+                  foodItemBuild("Lettuce", 'assets/rice.jpeg'),
+                  foodItemBuild("Cheese", 'assets/rice.jpeg'),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  foodItemBuild("Bread", 'assets/rice.jpeg'),
+                  foodItemBuild("Spam", 'assets/rice.jpeg'),
+                  foodItemBuild("Rice", 'assets/rice.jpeg'),
+                ],
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
