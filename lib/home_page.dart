@@ -204,7 +204,7 @@ class HomePageState extends State<HomePage> {
       // appBar: AppBar(title: const Text("FocalCulator")),
       body: Container(
           padding: const EdgeInsets.only(
-            top: 100,
+            top: 90,
             left: 40,
             bottom: 100,
             right: 40,
@@ -212,27 +212,31 @@ class HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
+              Text("F O O D S M A S H"),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  foodItemBuild("Egg", 'assets/rice.jpeg'),
-                  foodItemBuild("Tuna", 'assets/rice.jpeg'),
-                  foodItemBuild("Chicken", 'assets/rice.jpeg'),
+                  foodItemBuild("Egg", 'assets/egg.jpeg'),
+                  foodItemBuild("Tuna", 'assets/tuna.jpeg'),
+                  foodItemBuild("Chicken", 'assets/chicken.jpg'),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  foodItemBuild("Ramen", 'assets/rice.jpeg'),
-                  foodItemBuild("Lettuce", 'assets/rice.jpeg'),
-                  foodItemBuild("Cheese", 'assets/rice.jpeg'),
+                  foodItemBuild("Ramen", 'assets/ramen.jpg'),
+                  foodItemBuild("Lettuce", 'assets/lettuce.jpg'),
+                  foodItemBuild("Cheese", 'assets/cheese.jpg'),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  foodItemBuild("Bread", 'assets/rice.jpeg'),
-                  foodItemBuild("Spam", 'assets/rice.jpeg'),
+                  foodItemBuild("Bread", 'assets/bread.jpg'),
+                  foodItemBuild("Spam", 'assets/spam.jpg'),
                   foodItemBuild("Rice", 'assets/rice.jpeg'),
                 ],
               ),
@@ -261,8 +265,9 @@ class HomePageState extends State<HomePage> {
               ),
               Text(
                 eqn,
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 20, /*fontWeight: FontWeight.bold*/
+                ),
               ),
               const Padding(
                 padding: EdgeInsets.only(top: 20.0),
