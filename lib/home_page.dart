@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
+import './components/modal_trigger.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -201,8 +202,23 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /*floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _showModalBottomSheet(context);
+        },
+        backgroundColor: Colors.white,
+        child: const Text(
+          "?",
+          style: TextStyle(fontSize: 25),
+        ),
+        foregroundColor: Colors.black,
+      ),*/
       // appBar: AppBar(title: const Text("FocalCulator")),
+      floatingActionButton: Theme(
+          data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+          child: ModalTrigger()),
       body: Container(
+          // color: Colors.white,
           padding: const EdgeInsets.only(
             top: 90,
             left: 40,
@@ -212,8 +228,8 @@ class HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Text("F O O D S M A S H"),
-              SizedBox(
+              const Text("F O O D S M A S H"),
+              const SizedBox(
                 height: 20,
               ),
               Row(

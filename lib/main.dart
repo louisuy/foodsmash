@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "FocalCulator",
       theme: ThemeData(
+        // canvasColor: Colors.transparent,
         primarySwatch: Colors.blueGrey,
         textTheme: GoogleFonts.montserratTextTheme(),
       ),
