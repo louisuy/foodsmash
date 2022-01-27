@@ -20,7 +20,8 @@ class HomePageState extends State<HomePage> {
         n2 = "";
         eqn = n1;
       }
-
+    
+      // EGG
       if ((n1 == "Egg") || (n2 == "Egg")) {
         if ((n1 == "") || (n2 == "")) {
           eqn = n1;
@@ -41,14 +42,88 @@ class HomePageState extends State<HomePage> {
           result = "Egg Fried Rice";
         }
       }
+      // TUNA
       if ((n1 == "Tuna") || (n2 == "Tuna")) {
         if ((n1 == "") || (n2 == "")) {
           eqn = n1;
           result = "Tuna Salad";
         } else if ((n1 == "Chicken") || (n2 == "Chicken")) {
           result = "Chicken Tuna Salad";
+        } else if ((n1 == "Ramen") || (n2 == "Ramen")) {
+          result = "Tuna Ramen";
+        } else if ((n1 == "Lettuce") || (n2 == "Lettuce")) {
+          result = "Tuna Lettuce Wrap";
+        } else if ((n1 == "Cheese") || (n2 == "Cheese")) {
+          result = "Tuna Cheese Melt Sandwich";
+        } else if ((n1 == "Bread") || (n2 == "Bread")) {
+          result = "Tuna Salad Sandwich";
+        } else if ((n1 == "Spam") || (n2 == "Spam")) {
+          result = "Tuna and Spam Musubi";
+        } else if ((n1 == "Rice") || (n2 == "Rice")) {
+          result = "Tuna Rice Bowl";
         }
       }
+      // CHICKEN
+      if ((n1 == "") || (n2 == "")) {
+        if ((n1 == "") || (n2 == "")) {
+          eqn = n1;
+          result = "";
+        } else if ((n1 == "") || (n2 == "")) {
+          result = "";
+        }
+      }
+      // RAMEN
+      if ((n1 == "") || (n2 == "")) {
+        if ((n1 == "") || (n2 == "")) {
+          eqn = n1;
+          result = "";
+        } else if ((n1 == "") || (n2 == "")) {
+          result = "";
+        }
+      }
+      // LETTUCE
+      if ((n1 == "") || (n2 == "")) {
+        if ((n1 == "") || (n2 == "")) {
+          eqn = n1;
+          result = "";
+        } else if ((n1 == "") || (n2 == "")) {
+          result = "";
+        }
+      }
+      // CHEESE
+      if ((n1 == "") || (n2 == "")) {
+        if ((n1 == "") || (n2 == "")) {
+          eqn = n1;
+          result = "";
+        } else if ((n1 == "") || (n2 == "")) {
+          result = "";
+        }
+      }
+      // BREAD
+      if ((n1 == "") || (n2 == "")) {
+        if ((n1 == "") || (n2 == "")) {
+          eqn = n1;
+          result = "";
+        } else if ((n1 == "") || (n2 == "")) {
+          result = "";
+        }
+      }
+      // SPAM
+      if ((n1 == "") || (n2 == "")) {
+        if ((n1 == "") || (n2 == "")) {
+          eqn = n1;
+          result = "";
+        } else if ((n1 == "") || (n2 == "")) {
+          result = "";
+        }
+      }
+      // RICE
+      if ((n1 == "") || (n2 == "")) {
+        if ((n1 == "") || (n2 == "")) {
+          eqn = n1;
+          result = "Fried Rice";
+        }
+      }                       
     });
   }
 
